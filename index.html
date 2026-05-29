@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тестовое задание — Frontend</title>
+    <style>
+      :root {
+        --bg-color: #f5f6f8;
+        --card-bg: #ffffff;
+        --text-color: #202124;
+        --accent-color: #1a73e8;
+        --border-color: #dadce0;
+      }
+
+      body,
+      h1,
+      h2,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+          Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        box-sizing: border-box;
+        padding: 40px 20px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      .header {
+        margin-bottom: 32px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .header__title {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      .header__subtitle {
+        color: #5f6368;
+        font-size: 16px;
+      }
+
+      .tasks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+
+      .task-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .task-card__title {
+        font-size: 18px;
+      }
+
+      .task-card__button {
+        display: block;
+        text-align: center;
+        background-color: var(--accent-color);
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.15s ease;
+      }
+
+      .task-card__button:hover {
+        background-color: #1557b0;
+      }
+
+      .footer {
+        text-align: center;
+        color: #70757a;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">Тестовое задание</h1>
+        <p class="header__subtitle">Веб-технолог / Frontend-разработчик</p>
+      </header>
+
+      <main>
+        <div class="tasks-grid">
+          <div class="task-card">
+            <h2 class="task-card__title">1. Текст</h2>
+            <a href="task-1-text/" class="task-card__button">Открыть решение</a>
+          </div>
+
+          <div class="task-card">
+            <h2 class="task-card__title">2. Форма</h2>
+            <a href="task-2-form/" class="task-card__button">Открыть решение</a>
+          </div>
+
+          <div class="task-card">
+            <h2 class="task-card__title">3. Кнопки</h2>
+            <a href="task-3-buttons/" class="task-card__button"
+              >Открыть решение</a
+            >
+          </div>
+
+          <div class="task-card">
+            <h2 class="task-card__title">4. Схема</h2>
+            <a href="task-4-scheme/" class="task-card__button"
+              >Открыть решение</a
+            >
+          </div>
+
+          <div class="task-card">
+            <h2 class="task-card__title">5. Витрина</h2>
+            <a href="task-5-showcase/" class="task-card__button"
+              >Открыть решение</a
+            >
+          </div>
+
+          <div class="task-card">
+            <h2 class="task-card__title">6. Чёрная страница</h2>
+            <a href="task-6-dark-page/" class="task-card__button"
+              >Открыть решение</a
+            >
+          </div>
+
+          <div class="task-card">
+            <h2 class="task-card__title">7. Красота</h2>
+            <a href="task-7-beauty/" class="task-card__button"
+              >Открыть решение</a
+            >
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>© 2026</p>
+      </footer>
+    </div>
+  </body>
+</html>

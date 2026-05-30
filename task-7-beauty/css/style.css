@@ -1,0 +1,353 @@
+:root {
+  --color-text-dark: #2c3e50;
+  --color-text-muted: #7f8c8d;
+  --color-border: #e2e8f0;
+  --btn-shadow-default:
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.25);
+  --btn-shadow-hover:
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.3), 0 5px 9px rgba(0, 0, 0, 0.3);
+  --btn-shadow-pressed:
+    inset 0 4px 6px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  --btn-radius: 100px;
+  --btn-transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --switch-size: 14px;
+  --anim-duration: 0.6s;
+}
+
+/* Базовый сброс на всю страницу */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--color-text-dark);
+  background-color: #f5f5f5;
+  padding-bottom: 60px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Сквозная навигация */
+.main-header {
+  padding: 20px 0;
+  margin-bottom: 24px;
+}
+
+.back-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover {
+  color: #3498db;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 12px;
+}
+
+/* Секции страницы */
+.beauty-section {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Модификатор синей темы для кнопок */
+.beauty-section_theme_blue {
+  background-color: #436b9c;
+  color: #ffffff;
+}
+
+.beauty-section__title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--color-text-dark);
+}
+
+/* Текст внутри синей темы */
+.beauty-section_theme_blue .beauty-section__title,
+.beauty-section_theme_blue .demo-buttons__subtitle,
+.beauty-section_theme_blue .demo-buttons__label {
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* Компонент: Демонстрация кнопок */
+.demo-buttons {
+  display: flex;
+  gap: 48px;
+}
+
+.demo-buttons__col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-buttons__subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.demo-buttons__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.demo-buttons__label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  width: 90px;
+}
+
+/* Компонент: Скевоморфная кнопка */
+.skeuo-button {
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 36px;
+  min-width: 120px;
+  border-radius: var(--btn-radius);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: #4974a5;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.06),
+    rgba(0, 0, 0, 0.1)
+  );
+  box-shadow: var(--btn-shadow-default);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
+  will-change: transform, box-shadow;
+  transition:
+    background-color var(--btn-transition),
+    box-shadow var(--btn-transition),
+    transform var(--btn-transition);
+}
+
+.skeuo-button:hover,
+.skeuo-button_state_hover {
+  background-color: #5281b7;
+  box-shadow: var(--btn-shadow-hover);
+}
+
+.skeuo-button:active,
+.skeuo-button_state_active {
+  background-image: none;
+  background-color: #3b5f8c;
+  border-top-color: transparent;
+  box-shadow: var(--btn-shadow-pressed);
+  transform: translateY(1px);
+}
+
+.skeuo-button:focus-visible {
+  outline: 2px solid #4974a5;
+  outline-offset: 3px;
+}
+
+/* Изолированный контейнер для 3D-переключателя */
+.scene-wrapper {
+  background: #e1e7ec;
+  padding: 48px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene {
+  perspective: 800px;
+  font-size: var(--switch-size);
+}
+
+#flip {
+  display: none;
+}
+
+.switch-track {
+  position: relative;
+  display: block;
+  width: 18.125em;
+  height: 11.875em;
+  border-radius: 5.9375em;
+  cursor: pointer;
+  border: 1.5em solid #f2f5f8;
+  background: #000000;
+  box-shadow:
+    0 2.1875em 3.125em -0.9375em rgba(0, 0, 0, 0.25),
+    0 0.9375em 1.5625em -0.625em rgba(0, 0, 0, 0.15),
+    inset 0 1em 1.25em rgba(0, 0, 0, 0.5),
+    inset 0 -0.1875em 0.5em rgba(0, 0, 0, 0.2),
+    0 0.1563em 0 0 #ffffff;
+  overflow: hidden;
+}
+
+.track-bg-green {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% -20%,
+    #70cb2b 0%,
+    #4a8f15 75%,
+    #2c5d0a 100%
+  );
+  box-shadow: inset 0 0.625em 0.9375em rgba(0, 0, 0, 0.35);
+}
+
+.track-bg-red {
+  position: absolute;
+  top: 0;
+  left: 4.4375em;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% -20%,
+    #e34c56 0%,
+    #a42c34 75%,
+    #7b1a20 100%
+  );
+  box-shadow: inset 0 0.625em 0.9375em rgba(0, 0, 0, 0.35);
+  transition: transform var(--anim-duration) cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+.sphere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8.875em;
+  height: 8.875em;
+  border-radius: 50%;
+  background: linear-gradient(to right, #70cb2b 50%, #e34c56 50%);
+  z-index: 2;
+  overflow: hidden;
+  box-shadow:
+    -0.75em 0.625em 1.125em rgba(0, 0, 0, 0.55),
+    -0.25em 0.25em 0.5em rgba(0, 0, 0, 0.3),
+    0 0.9375em 1.5625em rgba(0, 0, 0, 0.2);
+  transition:
+    transform var(--anim-duration) cubic-bezier(0.37, 0, 0.63, 1),
+    box-shadow var(--anim-duration) cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+.shading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+.half-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 50%;
+  transition: transform var(--anim-duration)
+    cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transform-style: preserve-3d;
+}
+
+.side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  outline: 1px solid transparent;
+}
+
+.side::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(50% + 1.5px);
+  height: 100%;
+  border-radius: 4.4375em 0 0 4.4375em;
+}
+
+.side.front {
+  transform: rotateY(0deg) translateZ(0.1px);
+}
+
+.side.front::before {
+  background: #e34c56;
+}
+
+.side.back {
+  transform: rotateY(180deg) scaleX(-1) translateZ(0.1px);
+}
+
+.side.back::before {
+  background: #70cb2b;
+}
+
+/* Интерактивные состояния 3D-тумблера при клике */
+#flip:checked ~ .switch-track .sphere {
+  transform: translateX(6.25em);
+  box-shadow:
+    0.75em 0.625em 1.125em rgba(0, 0, 0, 0.55),
+    0.25em 0.25em 0.5em rgba(0, 0, 0, 0.3),
+    0 0.9375em 1.5625em rgba(0, 0, 0, 0.2);
+}
+
+#flip:checked ~ .switch-track .track-bg-red {
+  transform: translateX(6.25em);
+}
+
+#flip:checked ~ .switch-track .half-page {
+  transform: rotateY(180deg);
+}
+
+/* Адаптивность */
+@media (max-width: 37.5em) {
+  .demo-buttons {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .beauty-section {
+    padding: 20px;
+  }
+  .scene-wrapper {
+    padding: 24px;
+  }
+}

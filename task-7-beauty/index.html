@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тестовое задание — Красота</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <a href="../" class="back-link">← На главную</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1 class="page-title">Красота</h1>
+
+      <!-- Секция 1: Кнопка -->
+      <section class="beauty-section beauty-section_theme_blue">
+        <h2 class="beauty-section__title">Кнопка</h2>
+
+        <div class="demo-buttons">
+          <div class="demo-buttons__col">
+            <h3 class="demo-buttons__subtitle">Интерактивная</h3>
+            <button type="button" class="skeuo-button">Кнопка</button>
+          </div>
+
+          <div class="demo-buttons__col">
+            <h3 class="demo-buttons__subtitle">Контроль состояний</h3>
+
+            <div class="demo-buttons__item">
+              <span class="demo-buttons__label">Дефолт:</span>
+              <button
+                type="button"
+                class="skeuo-button skeuo-button_state_default"
+              >
+                Кнопка
+              </button>
+            </div>
+
+            <div class="demo-buttons__item">
+              <span class="demo-buttons__label">Ховер:</span>
+              <button
+                type="button"
+                class="skeuo-button skeuo-button_state_hover"
+              >
+                Кнопка
+              </button>
+            </div>
+
+            <div class="demo-buttons__item">
+              <span class="demo-buttons__label">Клик (Active):</span>
+              <button
+                type="button"
+                class="skeuo-button skeuo-button_state_active"
+              >
+                Кнопка
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция 2: Чекбокс -->
+      <section class="beauty-section">
+        <h2 class="beauty-section__title">Чекбокс</h2>
+
+        <div class="scene-wrapper">
+          <div class="scene">
+            <input type="checkbox" id="flip" />
+
+            <label for="flip" class="switch-track">
+              <div class="track-bg-green"></div>
+              <div class="track-bg-red"></div>
+
+              <div class="sphere">
+                <div class="shading"></div>
+                <div class="half-page">
+                  <div class="side front"></div>
+                  <div class="side back"></div>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

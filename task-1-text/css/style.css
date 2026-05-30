@@ -1,0 +1,262 @@
+:root {
+  --color-text: #2c3e50;
+  --color-muted: #7f8c8d;
+  --color-bg-accent: #f8f9fa;
+  --color-primary: #3498db;
+  --color-border: #e2e8f0;
+}
+
+/* Базовый сброс */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Шрифтовые стек-группы */
+body {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  padding-bottom: 60px;
+}
+
+.article-page__main-title,
+.article-page__title,
+.article-page__subtitle,
+.toc,
+.article-page__table,
+.back-link {
+  font-family: Arial, sans-serif;
+}
+
+/* Сетка и интерфейс */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-header {
+  padding: 20px 0 0;
+  margin-bottom: 40px;
+}
+
+.back-link {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}
+
+/* Общий паттерн для плашек (Оглавление, Цитаты, Списки) */
+.toc,
+.article-page__quote,
+.article-page__def-list {
+  background: var(--color-bg-accent);
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 32px;
+}
+
+/* Элементы статьи */
+.article-page__header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 24px;
+}
+
+.article-page__main-title {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #1a202c;
+}
+
+.article-page__lead {
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+.article-page__title {
+  font-size: 24px;
+  margin: 40px 0 16px;
+  color: #1a202c;
+}
+
+.article-page__subtitle {
+  font-size: 18px;
+  margin: 24px 0 16px;
+}
+
+.article-page__paragraph {
+  margin-bottom: 20px;
+}
+
+.article-page__abbr {
+  text-decoration: underline dotted var(--color-primary);
+  cursor: help;
+}
+
+.article-page__mark {
+  background: #fef3c7;
+  padding: 2px 4px;
+}
+
+/* Переопределение специфики для плашек */
+.article-page__quote {
+  margin: 32px 0;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 6px 6px 0;
+}
+
+.article-page__quote-text {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.article-page__quote-author {
+  font-size: 14px;
+  color: var(--color-muted);
+  display: block;
+}
+
+/* Адаптивная таблица */
+.article-page__table-wrapper {
+  overflow-x: auto;
+  margin: 24px 0;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.article-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  text-align: left;
+}
+
+.article-page__table th,
+.article-page__table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article-page__table th {
+  background: var(--color-bg-accent);
+  font-weight: 600;
+}
+
+/* Списки определений */
+.article-page__def-term {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.article-page__def-desc {
+  margin: 4px 0 16px 16px;
+}
+
+.article-page__def-desc:last-child {
+  margin-bottom: 0;
+}
+
+/* Блоки кода */
+.article-page__code,
+.article-page__pre,
+.article-page__code-block {
+  font-family: Consolas, Monaco, monospace;
+  font-size: 14px;
+}
+
+.article-page__code {
+  background: var(--color-bg-accent);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #e06c75;
+}
+
+.article-page__pre {
+  background: #282c34;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+
+.article-page__code-block {
+  color: #abb2bf;
+}
+
+.article-page__footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* Оглавление */
+.toc__title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.toc__list {
+  list-style: none;
+}
+
+.toc__list li {
+  margin-bottom: 6px;
+}
+
+.toc__list li:last-child {
+  margin-bottom: 0;
+}
+
+.toc__list a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.toc__list a:hover {
+  text-decoration: underline;
+}
+
+/* Оптимизированная кнопка наверх */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease, background-color 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-top-btn--show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: #2980b9;
+}

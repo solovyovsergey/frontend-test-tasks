@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Развитие веб-технологий: От статичных страниц к Web3</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <a href="../" class="back-link">← На главную</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <article class="article-page">
+        <header class="article-page__header">
+          <h1 class="article-page__main-title">
+            Развитие веб-технологий: От статичных страниц к Web3
+          </h1>
+          <p class="article-page__lead">
+            Краткий экскурс в историю фронтенда, разбор ключевых элементов
+            современной верстки и методологий разработки.
+          </p>
+        </header>
+
+        <nav class="toc">
+          <h2 class="toc__title">Содержание статьи</h2>
+          <ul class="toc__list" id="js-toc"></ul>
+        </nav>
+
+        <div class="article-page__content">
+          <h2 class="article-page__title">1. Эволюция стандартов</h2>
+          <p class="article-page__paragraph">
+            В начале пути веб состоял из простых текстовых документов. Сегодня
+            <abbr title="HyperText Markup Language" class="article-page__abbr"
+              >HTML</abbr
+            >
+            предоставляет огромный выбор семантических тегов, которые помогают
+            поисковым роботам и скринридерам правильно понимать структуру
+            страницы.
+          </p>
+
+          <blockquote class="article-page__quote">
+            <p class="article-page__quote-text">
+              Семантика — это не просто правила хорошего тона, это фундамент
+              доступности веб-интерфейсов для всех категорий пользователей.
+            </p>
+            <cite class="article-page__quote-author"
+              >— Неизвестный веб-технолог</cite
+            >
+          </blockquote>
+
+          <h2 class="article-page__title">2. Инструменты и методологии</h2>
+          <p class="article-page__paragraph">
+            Для поддержки порядка в больших проектах разработчики используют
+            строгие правила. Самой популярной и надежной остается методология
+            <strong>БЭМ (Блок, Элемент, Модификатор)</strong>. Она изолирует
+            стили и делает код предсказуемым.
+          </p>
+
+          <h3 class="article-page__subtitle">
+            Сравнение подходов к стилизации
+          </h3>
+          <div class="article-page__table-wrapper">
+            <table class="article-page__table">
+              <thead>
+                <tr>
+                  <th>Критерий</th>
+                  <th>Чистый CSS (Каскад)</th>
+                  <th>Методология БЭМ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Скорость старта</td>
+                  <td>Высокая</td>
+                  <td>Средняя</td>
+                </tr>
+                <tr>
+                  <td>Изоляция стилей</td>
+                  <td>Отсутствует</td>
+                  <td>Полная</td>
+                </tr>
+                <tr>
+                  <td>Масштабируемость</td>
+                  <td>Низкая</td>
+                  <td>Высокая</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="article-page__title">3. Демонстрация редких элементов</h2>
+          <p class="article-page__paragraph">
+            Хороший верстальщик знает и умеет использовать специфические теги
+            для списков определений и форматирования кода:
+          </p>
+
+          <dl class="article-page__def-list">
+            <dt class="article-page__def-term">Блок</dt>
+            <dd class="article-page__def-desc">
+              Независимый интерфейсный компонент, который может быть
+              переиспользован.
+            </dd>
+            <dt class="article-page__def-term">Элемент</dt>
+            <dd class="article-page__def-desc">
+              Составная часть блока, которая не может использоваться в отрыве от
+              него.
+            </dd>
+          </dl>
+
+          <h3 class="article-page__subtitle">
+            Пример inline-кода и блока кода
+          </h3>
+          <p class="article-page__paragraph">
+            Чтобы сделать текст жирным, мы используем тег
+            <code class="article-page__code">&lt;strong&gt;</code>, а не стили
+            <code class="article-page__code">font-weight: bold</code> напрямую в
+            разметке.
+          </p>
+
+          <pre
+            class="article-page__pre"
+          ><code class="article-page__code-block">.article-page__title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}</code></pre>
+        </div>
+
+        <footer class="article-page__footer">
+          <p class="article-page__meta">
+            Статья подготовлена в рамках выполнения тестового задания.
+            <mark class="article-page__mark">Все права защищены.</mark>
+          </p>
+        </footer>
+      </article>
+    </main>
+
+    <button
+      class="scroll-top-btn"
+      id="js-scroll-top"
+      aria-label="Наверх"
+      title="Наверх"
+    >
+      ↑
+    </button>
+  </body>
+</html>

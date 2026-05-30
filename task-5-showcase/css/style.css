@@ -80,6 +80,7 @@ body {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
   padding: 0 160px 20px 160px;
   cursor: grab;
 }
@@ -176,4 +177,20 @@ body {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .showcase__container::after {
+    display: none;
+  }
+
+  .showcase__scroll-area {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .showcase__scroll-area::-webkit-scrollbar-track {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }

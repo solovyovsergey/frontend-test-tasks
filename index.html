@@ -13,6 +13,10 @@
         --border-color: #dadce0;
       }
 
+      html {
+        height: 100%;
+      }
+
       body,
       h1,
       h2,
@@ -28,7 +32,7 @@
         background-color: var(--bg-color);
         color: var(--text-color);
         box-sizing: border-box;
-        padding: 40px 20px;
+        min-height: 100%;
       }
 
       *,
@@ -40,6 +44,10 @@
       .container {
         max-width: 960px;
         margin: 0 auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
       }
 
       .header {
@@ -98,6 +106,7 @@
       }
 
       .footer {
+        margin-top: auto;
         text-align: center;
         color: #70757a;
         font-size: 13px;

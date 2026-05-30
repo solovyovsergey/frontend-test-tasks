@@ -4,7 +4,7 @@
 
 ## Ссылки
 
-- **Live Demo:** [Ссылка на GitHub Pages]
+- **Live Demo:** [Ссылка на GitHub Pages](https://solovyovsergey.github.io/frontend-test-tasks/)
 
 ## Как запустить локально
 

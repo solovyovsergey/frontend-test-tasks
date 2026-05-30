@@ -1,0 +1,274 @@
+:root {
+  --color-page-bg: #dbe0e6;
+  --color-form-bg: #ffffff;
+  --color-accent-bg: #fff9c4;
+  --font-family: 'Segoe UI', Arial, sans-serif;
+  --border-style: 1px solid #d1d1d6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-page-bg);
+  color: #222222;
+  padding: 48px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 766px;
+}
+
+/* Сквозная навигация вверху */
+.main-header {
+  width: 100%;
+  max-width: 766px;
+  padding: 0 8px;
+  margin-bottom: 24px;
+}
+
+.back-link {
+  color: #7f8c8d;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover {
+  color: #5641db;
+}
+
+/* Заголовок страницы */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.page-header__title {
+  font-size: 28px;
+  font-weight: 500;
+}
+.page-header__subtitle {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Стопка бумаги */
+.custom-form {
+  background-color: var(--color-form-bg);
+  box-shadow:
+    0 1px 0 #b5b5b9,
+    0 3px 0 -1px #ffffff,
+    0 3px 0 0 #b5b5b9,
+    0 6px 0 -2px #f5f5f5,
+    0 6px 0 -1px #b5b5b9,
+    0 10px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Переиспользование внутренних отступов секций */
+.custom-form__section,
+.custom-form__footer {
+  padding: 40px 56px;
+}
+
+.custom-form__section {
+  border: none;
+  display: block;
+}
+.custom-form__section--accent {
+  background-color: var(--color-accent-bg);
+}
+
+.custom-form__section-title {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1e272e;
+}
+
+.custom-form__grid,
+.custom-form__footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.custom-form__row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.custom-form__label {
+  text-align: right;
+  font-size: 15px;
+  color: #333333;
+}
+
+.custom-form__control {
+  display: flex;
+  align-items: center;
+}
+
+/* Группировка общих стилей для всех полей ввода */
+.custom-form__input,
+.custom-form__textarea,
+.custom-form__color-picker {
+  width: 100%;
+  max-width: 380px;
+  padding: 8px 10px;
+  background-color: #ffffff;
+  font: 15px var(--font-family);
+  outline: none;
+  border: var(--border-style);
+  box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.custom-form__textarea {
+  height: 95px;
+  resize: vertical;
+}
+
+.custom-form__color-picker {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 55px;
+  height: 28px;
+  cursor: pointer;
+  padding: 0;
+}
+.custom-form__color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.custom-form__color-picker::-webkit-color-swatch {
+  border: none;
+}
+
+/* Подвал формы и смещение контента */
+.custom-form__footer-grid {
+  padding-left: 240px;
+  gap: 20px;
+}
+.custom-form__link {
+  color: #0000ff;
+}
+.custom-form__submit-wrapper {
+  margin-top: 16px;
+}
+
+/* Кнопка отправки */
+.custom-form__button {
+  background: linear-gradient(to bottom, #7f71f9, #5641db);
+  border: 1px solid #3c2bb0;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 12px 40px;
+  font: bold 17px var(--font-family);
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 4px 0 #312294,
+    0 5px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.custom-form__button:active {
+  top: 4px;
+  box-shadow:
+    0 0 0 #312294,
+    0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Переключатели (Чекбоксы / Радио) */
+.form-toggle {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 15px;
+}
+.form-toggle__label-text {
+  line-height: 1.4;
+}
+
+.form-toggle__input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.form-toggle__custom {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 2px 12px 0 0;
+  position: relative;
+  background-color: #ffffff;
+  border: var(--border-style);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.form-toggle__custom--radio {
+  border-radius: 50%;
+}
+.form-toggle__custom--checkbox {
+  border-radius: 2px;
+}
+
+.form-toggle__input-hidden:checked + .form-toggle__custom--radio::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: #222222;
+  border-radius: 50%;
+}
+
+.form-toggle__input-hidden:checked + .form-toggle__custom--checkbox {
+  background-color: #fff093;
+  border-color: #e6b800;
+}
+
+.form-toggle__input-hidden:checked + .form-toggle__custom--checkbox::before {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  font-size: 15px;
+  color: #b33939;
+  font-weight: bold;
+}
+
+/* Адаптивность (40.625em = 650px) */
+@media (max-width: 40.625em) {
+  .custom-form__row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .custom-form__label {
+    text-align: left;
+  }
+  .custom-form__section,
+  .custom-form__footer {
+    padding: 24px;
+  }
+  .custom-form__footer-grid {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тестовое задание — Форма</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Верхняя шапка с навигацией, один в один как в задаче 1 -->
+    <header class="main-header">
+      <div class="page-container">
+        <a href="../" class="back-link">← На главную</a>
+      </div>
+    </header>
+
+    <div class="page-container">
+      <header class="page-header">
+        <h1 class="page-header__title">Заполните поля</h1>
+        <span class="page-header__subtitle">ну пожалуйста</span>
+      </header>
+
+      <main>
+        <form class="custom-form" id="js-form" action="#" method="POST">
+          <fieldset class="custom-form__section">
+            <h2 class="custom-form__section-title">Основное</h2>
+
+            <div class="custom-form__grid">
+              <div class="custom-form__row">
+                <label for="user-name" class="custom-form__label">Имя</label>
+                <div class="custom-form__control">
+                  <input
+                    type="text"
+                    id="user-name"
+                    name="name"
+                    class="custom-form__input"
+                    placeholder="по паспорту"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="custom-form__row">
+                <label for="user-color" class="custom-form__label"
+                  >Цвет вашего настроения</label
+                >
+                <div class="custom-form__control">
+                  <input
+                    type="color"
+                    id="user-color"
+                    name="mood_color"
+                    class="custom-form__color-picker"
+                    value="#0000ff"
+                  />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="custom-form__section custom-form__section--accent">
+            <h2 class="custom-form__section-title">Дополнительное</h2>
+
+            <div class="custom-form__grid">
+              <div class="custom-form__row">
+                <label for="user-comment" class="custom-form__label"
+                  >Комментарий</label
+                >
+                <div class="custom-form__control">
+                  <textarea
+                    id="user-comment"
+                    name="comment"
+                    class="custom-form__textarea"
+                    placeholder="Напишите хоть что-нибудь.&#10;Если хотите, конечно."
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="custom-form__footer">
+            <div class="custom-form__footer-grid">
+              <div class="custom-form__checkbox-row">
+                <label class="form-toggle">
+                  <input
+                    type="radio"
+                    name="radio_group"
+                    value="just_radio"
+                    class="form-toggle__input-hidden"
+                  />
+                  <span
+                    class="form-toggle__custom form-toggle__custom--radio"
+                  ></span>
+                  <span class="form-toggle__label-text"
+                    >Ну а тут просто полежит радиобатон</span
+                  >
+                </label>
+              </div>
+
+              <div class="custom-form__checkbox-row">
+                <label class="form-toggle">
+                  <input
+                    type="checkbox"
+                    name="agree_all"
+                    value="yes"
+                    class="form-toggle__input-hidden"
+                    checked
+                    required
+                  />
+                  <span
+                    class="form-toggle__custom form-toggle__custom--checkbox"
+                  ></span>
+                  <span class="form-toggle__label-text">
+                    Соглашаюсь на всё, что бы вы ни придумали и осознаю, что это
+                    может означать
+                    <a href="#" class="custom-form__link" target="_blank"
+                      >что угодно</a
+                    >
+                  </span>
+                </label>
+              </div>
+
+              <div class="custom-form__submit-wrapper">
+                <button type="submit" class="custom-form__button">
+                  Отправить все мои данные
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
